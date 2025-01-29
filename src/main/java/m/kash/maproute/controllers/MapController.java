@@ -19,6 +19,7 @@ public class MapController {
     }
 
     @GetMapping("/coordinates")
+    @CrossOrigin(origins = "*")
     public CoordinateResponseDto getCoordinates(@RequestBody CoordinateRequestDto coordinatesRequestDto){
         String sourceAddress = coordinatesRequestDto.getSource();
         Source responseSource = new Source(mapCoordinateService.getCoordinates(sourceAddress)) ;
