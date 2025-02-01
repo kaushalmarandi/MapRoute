@@ -1,6 +1,9 @@
 # 🚀 https://navido.tech Realtime Route Optimizer
 
-This is the **Spring Boot Backend** for the **Navido** application. It provides realtime optimized routes based on traffic metadata, input locations and interacts with a React frontend.
+This is the **Spring Boot Backend** for the **Navido** application. It provides realtime optimized routes based on traffic metadata, input locations and interacts with a React frontend.It processes location-based requests and returns step-by-step navigation details, estimated travel time, and total distance. The backend seamlessly integrates with a React frontend and supports containerized deployment using Docker. 
+
+### Note:
+- The backend can be modified to get the routes in three different languages, i.e,  ENGLISH, HINDI & KANNADA. However based on 90% of the users and reviews, it's been set to ENGLISH internally, as maximum of the users didn't want too many input fields, and considered single language to be convenient.
 
 
 ## 📌 Features
@@ -20,11 +23,20 @@ This is the **Spring Boot Backend** for the **Navido** application. It provides 
 
 ---
 
-### ✅ Application is live, and can be directly tested on https://navido.tech
+## Accessing the Application
+
+### Option 1.
+
+#### ✅ Application is live, and can be directly tested on https://navido.tech
+
+
+
 
 ---
 
-### Backend api testing can be done on https://routeme.azurewebsites.net/maps
+### Option 2.
+
+#### Backend api testing can be done on https://routeme.azurewebsites.net/maps
 #### 1. To get coordinates of source and destination , make a get call on
 - ```https://routeme.azurewebsites.net/maps/coordinates```
 - with request body in the format
@@ -56,14 +68,14 @@ This is the **Spring Boot Backend** for the **Navido** application. It provides 
  - ```json
    {
     "source" : "Marathahalli bridge",
-    "destination" : "Nexus Shantiniketan Mall Bengaluru",
+    "destination" : "Brookefield Mall Bengaluru",
     "mode" : "driving"
    }
 - expected output:
 - ```json
   {
-  "totalDistance": 8451.0,
-    "eta": "0 hours 29 minutes",
+    "totalDistance": 2093.0,
+    "eta": "0 hours 9 minutes",
     "steps": [
         {
             "instructions": "Head east on Marathahalli Bridge Service Road",
@@ -75,7 +87,7 @@ This is the **Spring Boot Backend** for the **Navido** application. It provides 
             "instructions": "Make a slight left onto Varthur Road",
             "readable_distance": "0 km 423 metres",
             "maneuver": "turn-slight-left",
-            "readable_duration": "0 hours 2 minutes"
+            "readable_duration": "0 hours 3 minutes"
         },
         {
             "instructions": "Go straight towards ITPB",
@@ -83,14 +95,26 @@ This is the **Spring Boot Backend** for the **Navido** application. It provides 
             "maneuver": "continue",
             "readable_duration": "0 hours 1 minutes"
         },
-         {
-            "instructions": "You have arrived at your destination, on the left",
+        {
+            "instructions": "Turn left onto Kundalahalli Main Road",
+            "readable_distance": "1 km 221 metres",
+            "maneuver": "turn-left",
+            "readable_duration": "0 hours 5 minutes"
+        },
+        {
+            "instructions": "Make a sharp left",
+            "readable_distance": "0 km 41 metres",
+            "maneuver": "turn-sharp-left",
+            "readable_duration": "0 hours 1 minutes"
+        },
+        {
+            "instructions": "You have arrived at your destination",
             "readable_distance": "0 km 0 metres",
             "maneuver": "arrive",
             "readable_duration": "0 hours 0 minutes"
         }
     ]
-  }
+}
 
 ## 🛠️ Setup & Installation
 ### 1️⃣ Clone the Repository
