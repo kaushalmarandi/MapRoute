@@ -3,6 +3,7 @@
 This is the **Spring Boot Backend** for the **Navido** application. It provides realtime optimized routes based on traffic metadata, input locations and interacts with a React frontend.It processes location-based requests and returns step-by-step navigation details, estimated travel time, and total distance. The backend seamlessly integrates with a React frontend and supports containerized deployment using Docker. 
 
 ### Note:
+- Currently supports Indian addresses only.
 - The backend can be modified to get the routes in three different languages, i.e,  ENGLISH, HINDI & KANNADA. However based on 90% of the users and reviews, it's been set to ENGLISH internally, as maximum of the users didn't want too many input fields, and considered single language to be convenient.
 
 
